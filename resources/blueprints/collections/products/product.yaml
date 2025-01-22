@@ -1,0 +1,42 @@
+title: Product
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: price
+            field:
+              type: text
+              display: Price
+          -
+            handle: image_url
+            field:
+              type: text
+              display: image_url
+          -
+            handle: image
+            field:
+              container: assets
+              type: assets
+              display: image
+              folder: products
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

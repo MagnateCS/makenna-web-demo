@@ -1,0 +1,56 @@
+{{ if current_uri == "/" }}
+    {{ colors = "bg-transparent text-white"}}
+{{ else }}
+    {{ colors = "bg-white text-black"}}
+{{ endif }}
+
+<nav id="header" class="z-10 sticky  top-0  w-screen h-[100px] {{ colors }} font-inter transition-all duration-300">
+
+        <div class="w-full max-w-[900px] flex justify-between h-full mx-auto items-center">
+            <ul class="w-[200px]">
+                <li>
+                    <a href="/"> 
+                        <img src="assets/intro/makenna.png" class="h-[45px]" />
+                    </a>
+                </li>
+            </ul>
+        
+            <ul class=" gap-[25px]  text-[15px] hidden lg:flex  h-full justify-center items-center">
+                {{ nav:header }}
+                    {{ if title != "Home" }}
+                        <li class="hover:underline">
+                            <a href="{{url}}"> {{title}} </a>
+                        </li>
+                    {{ endif}}
+                {{ /nav:header }}
+            </ul>
+    
+            <a href="/locations" id="header_button" class=" text-center hover:bg-red-600 w-[150px] hidden lg:block bg-redCustom px-5 py-2 rounded-full">
+                Order Now
+            </a>
+        </div>
+
+</nav>
+
+<script>
+    if (window.location.pathname == "/"){
+        document.addEventListener("scroll", ()=>{ 
+            lastKnownScrollPosition = window.scrollY;
+
+            if(lastKnownScrollPosition > 300) {
+                const header = document.getElementById("header");
+                header.style.color = "black";
+                header.style.backgroundColor = "white"
+                const button = document.getElementById("header_button");
+                button.style.color ="white"
+            }
+            else { 
+                const header = document.getElementById("header");
+                header.style.color = "white";
+                header.style.backgroundColor = "transparent"
+
+              
+            }
+        })
+    }
+</script>

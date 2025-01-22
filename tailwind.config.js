@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+import typography from "@tailwindcss/typography"
 export default {
     content: [
         './resources/**/*.antlers.html',
@@ -9,10 +9,24 @@ export default {
     ],
 
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+              lightBlue: '#59e0f7',
+              blueCustom: "#0D76BC",
+              redCustom: '#D71821',
+            },
+            fontFamily: {
+                "dancing": ["Dancing Script", "serif"],
+                "poppins": ["Poppins", "serif"],
+                "nautigal": ["The Nautigal", "serif"],
+                "marker": ["Permanent Marker", "serif"],
+                "inter": ["Inter", "serif"]
+                
+            }
+          },
     },
 
     plugins: [
-        require('@tailwindcss/typography'),
+        typography,
     ],
 };

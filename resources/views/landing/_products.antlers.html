@@ -1,0 +1,22 @@
+<h1 class="text-center font-inter text-[40px] mt-[100px]">Our Products</h1>
+<div class="mx-auto grid grid-cols-1 gap-4 lg:grid-cols-3 w-[80%]">
+    {{collection:products limit="9" offset="30"}}
+        
+       
+            <div class="w-[full] h-auto flex justify-center items-center flex-col p-4 ">
+                
+                <div class="h-[400px] flex justify-center items-center">
+                    <div class="h-full ">
+
+                    </div>
+                    <img class="hover:cursor-pointer w-[300px] rounded-xl hover:scale-105 hover:shadow-2xl transition-all duration-150" src="{{ image[0]}} "/>
+                </div>
+                <span class="mt-[10px] font-inter text-md w-[300px] ">
+                     {{title}}
+                    <div class="text-sm text-gray-400">
+                        {{price}}
+                    </div>
+                </span>
+            </div>  
+    {{/collection:products}}
+</div>

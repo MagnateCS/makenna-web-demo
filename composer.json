@@ -11,9 +11,11 @@
     ],
     "require": {
         "php": "^8.2",
+        "jonassiewertsen/statamic-livewire": "^3.8",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
-        "statamic/cms": "^5.0"
+        "statamic/cms": "^5.0",
+        "statamic/importer": "^1.5"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.8.1",
